@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Header from "../components/header";
 
 const Login = () => {
   const navigate = useNavigate();
 
   // Tài khoản giả định
   const fakeAccount = {
-    username: "admin",
+    username: "admin@gmail.com",
     password: "1234",
   };
 
@@ -56,7 +57,7 @@ const Login = () => {
       credentials.username === fakeAccount.username &&
       credentials.password === fakeAccount.password
     ) {
-      navigate("/dashboard"); // Điều hướng đến trang Dashboard
+      navigate("/homePage"); // Điều hướng đến trang Dashboard
     } else {
       alert("Tên đăng nhập hoặc mật khẩu không đúng!");
     }
@@ -68,7 +69,7 @@ const Login = () => {
       style={{
         backgroundImage: "url('/images/background.png')", // Đảm bảo ảnh nằm trong thư mục public
       }}
-    >
+    > 
       <div className="bg-[#1E2336] bg-opacity-90 rounded-lg p-8 w-96 shadow-lg">
         <div className="flex justify-center mb-6">
           <img
